@@ -1,0 +1,14 @@
+{
+	"mcpServers": {
+		"clawmarks": {
+			"type": "stdio",
+			"command": "clawmarks",
+			"args": ["mcp"]
+		},
+		"llm-orc": {
+			"type": "stdio",
+			"command": "llm-orc",
+			"args": ["mcp", "serve"]
+		}
+	}
+}

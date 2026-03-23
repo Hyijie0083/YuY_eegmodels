@@ -1,0 +1,16 @@
+theme = light:Belafonte Day,dark:Belafonte Night
+font-family = "Inconsolata Nerd Font Mono"
+font-size=14
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+macos-titlebar-style = transparent
+
+quit-after-last-window-closed = true
+quick-terminal-autohide = false
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = true
+window-theme = dark
+window-padding-balance = true
+window-padding-color = extend
+background-opacity = 0.97
+background-blur = 15

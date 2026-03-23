@@ -1,0 +1,67 @@
+{
+  "description": "Model manifest for the llm-conductor and ensemble-designer skills. Lists all Ollama models used by ensemble profiles and verification pipelines.",
+  "ollama": [
+    {
+      "model": "qwen3:1.7b",
+      "profiles": ["router", "confidence-scorer"],
+      "tier": 1,
+      "params": "1.7B",
+      "role": "Fast routing, classification, confidence scoring"
+    },
+    {
+      "model": "qwen3:8b",
+      "profiles": ["analyst-qwen"],
+      "tier": 2,
+      "params": "8B",
+      "role": "Workhorse extraction and analysis"
+    },
+    {
+      "model": "mistral:7b",
+      "profiles": ["analyst-mistral"],
+      "tier": 2,
+      "params": "7B",
+      "role": "Workhorse extraction and analysis (complementary architecture)"
+    },
+    {
+      "model": "deepseek-r1:8b",
+      "profiles": ["reasoner"],
+      "tier": 2,
+      "params": "8B",
+      "role": "Chain-of-thought reasoning"
+    },
+    {
+      "model": "qwen3:14b",
+      "profiles": ["synthesizer-local"],
+      "tier": 3,
+      "params": "14B",
+      "role": "Cross-domain synthesis and validation"
+    }
+  ],
+  "verification": {
+    "note": "Classical ML models for verification scripts (ADR-016). Not Ollama-managed — installed via pip.",
+    "models": [
+      {
+        "name": "MiniLM",
+        "package": "sentence-transformers",
+        "model_id": "all-MiniLM-L6-v2",
+        "params": "22M",
+        "size_mb": 80,
+        "role": "Embedding-based confidence (cosine similarity)"
+      },
+      {
+        "name": "DeBERTa-v3-base",
+        "package": "transformers",
+        "model_id": "cross-encoder/nli-deberta-v3-base",
+        "params": "86M",
+        "size_mb": 170,
+        "role": "NLI-based consistency (contradiction detection)"
+      }
+    ],
+    "pip_dependencies": [
+      "sentence-transformers",
+      "onnxruntime",
+      "numpy",
+      "torch"
+    ]
+  }
+}

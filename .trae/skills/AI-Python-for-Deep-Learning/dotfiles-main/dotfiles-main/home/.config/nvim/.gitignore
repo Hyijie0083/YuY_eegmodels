@@ -1,0 +1,49 @@
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+.aider*
+
+# System files
+.DS_Store
+Thumbs.db
+.directory
+Desktop.ini
+
+# Lua
+*.src.rock
+*.zip
+*.tar.gz
+*.o
+*.os
+luacov.*
+luacov.stats.out
+lua_modules
+
+# Editor state
+.session
+session
+.netrwhist
+*~
+.undodir/
+.swap/
+.backup/
+.vscode/
+
+# Custom plugin files
+plugin/packer_compiled.lua
+plugin/packer_compiled.vim
+
+# Generated files
+lazy-lock.json
+.luarc.json
+mason/
+spell/*.spl
+pack/
+logs/
+tmp/
+.cache/

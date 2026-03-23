@@ -1,0 +1,7 @@
+version: 1
+standing_authorizations: []
+routing_thresholds:
+  calibration_period: 5
+  sampling_rate_established: 0.15
+  trusted_threshold_uses: 20
+  trusted_threshold_good_ratio: 0.8

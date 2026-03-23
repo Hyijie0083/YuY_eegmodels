@@ -1,0 +1,7 @@
+model: llama3:latest
+name: conductor-medium
+provider: ollama
+system_prompt: You are a synthesis expert. Given multiple structured analysis outputs,
+  combine them into a coherent summary report. Identify patterns across inputs, highlight
+  significant findings, and organize results clearly. Output valid JSON.
+timeout_seconds: 120

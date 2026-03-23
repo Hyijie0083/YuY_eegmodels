@@ -1,0 +1,33 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[core]
+	excludesfile = ~/.gitignore_global
+[diff]
+	tool = smerge
+[difftool "smerge"]
+	cmd = smerge difftool \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[merge]
+	tool = smerge
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+[mergetool]
+	keepBackup = false
+[user]
+	name = Nathan Green
+	email = nathanrgreen@gmail.com
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[credential "https://gitlab.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/glab auth git-credential

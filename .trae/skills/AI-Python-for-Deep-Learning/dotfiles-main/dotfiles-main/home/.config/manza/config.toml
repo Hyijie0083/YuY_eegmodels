@@ -1,0 +1,40 @@
+[appearance]
+theme = "dark"
+zoom_level = 0.95
+
+[editor]
+auto_save = false
+vim_mode = true
+scroll_sync = true
+
+[explorer]
+show_dotfiles = true
+show_all_folders = false
+ignore_patterns = [
+    ".DS_Store",
+    "Thumbs.db",
+    ".git",
+    "node_modules",
+]
+
+[shortcuts]
+bold = "Mod+b"
+cycle_next_pane = "Mod+Shift+ArrowRight"
+cycle_previous_pane = "Mod+Shift+ArrowLeft"
+focus_editor = "Mod+2"
+focus_explorer = "Mod+1"
+focus_preview = "Mod+3"
+italic = "Mod+i"
+navigate_back = "Mod+["
+navigate_forward = "Mod+]"
+new_file = "Mod+n"
+new_folder = "Mod+Shift+n"
+open_settings = "Mod+,"
+reveal_in_explorer = "Mod+Shift+e"
+save = "Mod+s"
+toggle_context_pin = "Mod+d"
+toggle_contexts_view = "Mod+5"
+toggle_graph_view = "Mod+4"
+zoom_in = "Mod+="
+zoom_out = "Mod+-"
+zoom_reset = "Mod+0"

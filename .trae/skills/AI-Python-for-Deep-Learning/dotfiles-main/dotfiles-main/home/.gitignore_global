@@ -1,0 +1,13 @@
+
+# Aider files
+.aider*
+.aider/
+.aider.chat.history.md
+.aider.input.history
+.clawmarks.json
+
+# Claude Code
+.claude/settings.local.json
+
+# Plexus MCP
+.plexus.db

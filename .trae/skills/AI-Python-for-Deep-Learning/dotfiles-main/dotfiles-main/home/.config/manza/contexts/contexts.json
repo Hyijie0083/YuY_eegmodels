@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "contexts": [
+    {
+      "id": "context_1768782551747_en5ez9lrz",
+      "name": "strangeloops",
+      "home_directory": "/Users/nathangreen/Development/strangeloops",
+      "created": 1768782551747,
+      "last_accessed": 1769503442953,
+      "items": [
+        {
+          "type": "folder",
+          "path": "/Users/nathangreen/Development/strangeloops"
+        }
+      ]
+    },
+    {
+      "id": "context_1769499391978_m9tc67pom",
+      "name": "trellis",
+      "home_directory": "/Users/nathangreen/Development/trellis",
+      "created": 1769499391978,
+      "last_accessed": 1769502383969,
+      "items": [
+        {
+          "type": "folder",
+          "path": "/Users/nathangreen/Development/trellis"
+        }
+      ]
+    },
+    {
+      "id": "context_1769509079909_sea5m3b0t",
+      "name": "plexus",
+      "home_directory": "/Users/nathangreen/Development/plexus",
+      "created": 1769509079909,
+      "last_accessed": 1769509081713,
+      "items": [
+        {
+          "type": "folder",
+          "path": "/Users/nathangreen/Development/plexus"
+        }
+      ]
+    }
+  ]
+}

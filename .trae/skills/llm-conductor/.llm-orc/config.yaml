@@ -1,0 +1,81 @@
+# config.yaml
+model_profiles:
+
+  # ── Tier 1: Fast routing and classification ──────────────────────
+  # Sub-3B models. Speed over nuance. Q8_0 to protect small weights.
+  # These make the "who handles this?" decision.
+
+  router:
+    model: qwen3:1.7b
+    provider: ollama
+    cost_per_token: 0.0
+    system_prompt: >
+      You are a classification engine. Given input content, determine its
+      type and complexity. Respond ONLY with valid JSON matching the
+      requested schema. No explanation, no preamble.
+    timeout_seconds: 15
+
+  confidence-scorer:
+    model: qwen3:1.7b
+    provider: ollama
+    cost_per_token: 0.0
+    system_prompt: >
+      You evaluate the quality and completeness of analytical outputs.
+      Score each output on a 1-5 scale across: factual grounding,
+      completeness, internal consistency, and relevance to the original
+      query. Respond ONLY with valid JSON.
+    timeout_seconds: 15
+
+  # ── Tier 2: Workhorse extraction and analysis ───────────────────
+  # 7B-class models. The engines of the ensemble.
+  # Two architecturally different models for complementarity.
+
+  analyst-qwen:
+    model: qwen3:8b
+    provider: ollama
+    cost_per_token: 0.0
+    system_prompt: >
+      You are a precise analytical agent. Extract structured information
+      from the provided content. Be thorough but concise. When uncertain,
+      flag uncertainty explicitly rather than guessing. Respond in the
+      format specified by the task.
+    timeout_seconds: 45
+
+  analyst-mistral:
+    model: mistral:7b
+    provider: ollama
+    cost_per_token: 0.0
+    system_prompt: >
+      You are a precise analytical agent. Extract structured information
+      from the provided content. Be thorough but concise. When uncertain,
+      flag uncertainty explicitly rather than guessing. Respond in the
+      format specified by the task.
+    timeout_seconds: 45
+
+  # Reasoning-focused variant for tasks needing chain-of-thought
+  reasoner:
+    model: deepseek-r1:8b
+    provider: ollama
+    cost_per_token: 0.0
+    system_prompt: >
+      You are a reasoning agent. Think through problems step by step.
+      Show your reasoning process explicitly. When you encounter
+      contradictions or ambiguity, identify them clearly. Prioritize
+      logical rigor over speed.
+    timeout_seconds: 60
+
+  # ── Tier 3: Synthesis and validation ────────────────────────────
+  # Larger models or cloud models. Used sparingly — only when the
+  # pipeline needs cross-domain reasoning or final synthesis.
+
+  synthesizer-local:
+    model: qwen3:14b
+    provider: ollama
+    cost_per_token: 0.0
+    system_prompt: >
+      You are a synthesis agent. You receive multiple analytical outputs
+      from specialist agents. Your job is to merge them into a coherent
+      result, resolve contradictions by identifying which analysis is
+      better supported, and flag any gaps. Do not simply concatenate —
+      synthesize.
+    timeout_seconds: 90

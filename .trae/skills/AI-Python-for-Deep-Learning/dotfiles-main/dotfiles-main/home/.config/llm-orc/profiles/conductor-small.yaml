@@ -1,0 +1,7 @@
+model: gemma3:1b
+name: conductor-small
+provider: ollama
+system_prompt: 'You are a careful analyst. Given structured inputs, perform bounded
+  analysis tasks: compare items, identify mismatches, classify findings. Output valid
+  JSON with your analysis. Be thorough but concise.'
+timeout_seconds: 60

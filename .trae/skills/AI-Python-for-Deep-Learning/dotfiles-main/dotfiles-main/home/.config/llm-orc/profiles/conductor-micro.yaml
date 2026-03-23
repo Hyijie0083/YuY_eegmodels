@@ -1,0 +1,7 @@
+model: qwen3:0.6b
+name: conductor-micro
+provider: ollama
+system_prompt: You are a precise extractor. Given input text, extract the requested
+  structured data exactly as specified. Output valid JSON only. Do not add commentary
+  or explanation outside the JSON structure. /no_think
+timeout_seconds: 30
